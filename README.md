@@ -14,6 +14,7 @@ match for a given brightness. The relationships between the classes are mainly
 composition/“has a”: Shell and AsciiArtAlgorithm each hold references to Image
 and SubImgCharMatcher, and AsciiArtAlgorithm also depends on the static services
 of ImageProcessing to prepare and analyze the image before character matching.
+
 Q2) We used HashSet<Character> (via Set<Character>) in Shell and
 SubImgCharMatcher to store the active character set without duplicates,
 because it gives average O(1) time for add, remove and contains, with
@@ -32,6 +33,7 @@ O(1) indexed access, with O(n) space. Finally, for image data and grids I used
 arrays such as char[], double[][], Image[][] and Color[][], because a 2D array
 matches the natural row–column structure of images, offers O(1) indexed access,
 and has minimal overhead in time and memory when iterating over all pixels.
+
 Q3) We used Java’s exception mechanism to separate normal program flow from
 error handling, especially for user input errors and image related problems.
 We defined custom runtime exceptions: InputException for invalid user commands
